@@ -1,0 +1,936 @@
+***********************************************************************************************
+***                                                                                         ***
+***                                    LINK INFORMATION                                     ***
+***                                                                                         ***
+***********************************************************************************************
+
+Linker version:
+
+  SEGGER ARM Linker 4.38.6 compiled Aug 19 2023 00:54:01
+  Copyright (c) 2017-2022 SEGGER Microcontroller GmbH    www.segger.com
+
+
+***********************************************************************************************
+***                                                                                         ***
+***                                     MODULE SUMMARY                                      ***
+***                                                                                         ***
+***********************************************************************************************
+
+Memory use by input file:
+
+  Object File                                       RX Code     RO Data     RW Data     ZI Data
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  02drv_ntw.o                                           554                       8          17
+  board.o                                                90                                    
+  dn_endianness.o                                       140                                    
+  dn_hdlc.o                                             672         512                     144
+  dn_ipmt.o                                           2 290                                 152
+  dn_lock.o                                               4                                    
+  dn_serial_mt.o                                        736                                  12
+  dn_uart.o                                             478                                 276
+  gpio.o                                                 84                                   8
+  nrf52833_Vectors.o                                    338                                    
+  nRF_Startup.o                                          64                                    
+  ntw.o                                               1 424                                 328
+  periodictimer.o                                       376                                  20
+  SEGGER_THUMB_Startup.o                                 20                                    
+  system_nrf52.o                                        900                       4            
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Subtotal (15 objects)                               8 170         512          12         957
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  SEGGER_crtinit_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a
+                                                         74                                    
+  strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a
+                                                        196                                    
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Subtotal (2 archives)                                 270                                    
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Linker created (shared data, fills, blocks):                       48                   2 048
+  =============================================  ==========  ==========  ==========  ==========
+  Total:                                              8 440         560          12       3 005
+  =============================================  ==========  ==========  ==========  ==========
+
+Memory use by archive member:
+
+  Archive member                                    RX Code     RO Data     RW Data     ZI Data
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+                                                         74                                    
+  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+                                                        196                                    
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Subtotal (2 members from 2 archives)                  270                                    
+  Objects (15 files)                                  8 170         512          12         957
+  Linker created (shared data, fills, blocks):                       48                   2 048
+  =============================================  ==========  ==========  ==========  ==========
+  Total:                                              8 440         560          12       3 005
+  =============================================  ==========  ==========  ==========  ==========
+
+Memory use by linker:
+
+  Description                                       RX Code     RO Data     RW Data     ZI Data
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Initialization table                                               48                        
+  Memory for block 'stack'                                                                2 048
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Subtotal (linker created):                                         48                   2 048
+  ---------------------------------------------  ----------  ----------  ----------  ----------
+  Objects (15 files)                                  8 170         512          12         957
+  Archives (2 files)                                    270                                    
+  =============================================  ==========  ==========  ==========  ==========
+  Total:                                              8 440         560          12       3 005
+  =============================================  ==========  ==========  ==========  ==========
+
+
+***********************************************************************************************
+***                                                                                         ***
+***                                     SECTION DETAIL                                      ***
+***                                                                                         ***
+***********************************************************************************************
+
+Sections by address:
+
+  Range              Symbol or [section] Name         Size  Al  Init  Ac  Object File
+  -----------------  -------------------------  ----------  --  ----  --  -----------
+  00000000-000000ff  _vectors                          256  256
+                                                                Code  RX  nrf52833_Vectors.o
+  00000100-00000113  _start                             20   4  Code  RX  SEGGER_THUMB_Startup.o
+  00000114-0000013b  HardFault_Handler                  40   4  Code  RX  nRF_Startup.o
+  0000013c-00000197  memcpy                             92   4  Code  RX  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  00000198-000001ff  __aeabi_memclr                    104   4  Code  RX  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  00000200-00000475  dn_ipmt_rxSerialRequest           630   4  Code  RX  dn_ipmt.o
+  00000476-0000063f  SystemInit                        458   2  Code  RX  system_nrf52.o
+  00000640-000006a1  nrf52_errata_36                    98   2  Code  RX  system_nrf52.o
+  000006a2-00000703  nrf52_errata_66                    98   2  Code  RX  system_nrf52.o
+  00000704-00000765  nrf52_errata_136                   98   2  Code  RX  system_nrf52.o
+  00000766-00000783  nrf52_handle_approtect             30   2  Code  RX  system_nrf52.o
+  00000784-000007e5  nrf52_configuration_249            98   2  Code  RX  system_nrf52.o
+  000007e6-00000827  _ntw_receive_cb                    66   2  Code  RX  02drv_ntw.o
+  00000828-0000088d  _periodtimer_cb                   102   2  Code  RX  02drv_ntw.o
+  0000088e-000008a7  RADIO_IRQHandler                   26   2  Code  RX  02drv_ntw.o
+  000008a8-000008f9  board_init                         82   2  Code  RX  board.o
+  000008fa-00000973  periodictimer_init                122   2  Code  RX  periodictimer.o
+  00000974-000009b1  __NVIC_SetPriority                 62   2  Code  RX  periodictimer.o
+  000009b2-00000a9b  dn_hdlc_rxByte                    234   2  Code  RX  dn_hdlc.o
+  00000a9c-00000ab5  dn_hdlc_outputOpen                 26   2  Code  RX  dn_hdlc.o
+  00000ab6-00000b07  dn_hdlc_outputWrite                82   2  Code  RX  dn_hdlc.o
+  00000b08-00000b31  dn_hdlc_crcIteration               42   2  Code  RX  dn_hdlc.o
+  00000b32-00000b7b  dn_ipmt_init                       74   2  Code  RX  dn_ipmt.o
+  00000b7c-00000b95  dn_ipmt_cancelTx                   26   2  Code  RX  dn_ipmt.o
+  00000b96-00000c6f  dn_ipmt_getParameter_moteStatus_reply
+                                                       218   2  Code  RX  dn_ipmt.o
+  00000c70-00000cf1  dn_ipmt_join                      130   2  Code  RX  dn_ipmt.o
+  00000cf2-00000d7f  dn_ipmt_openSocket                142   2  Code  RX  dn_ipmt.o
+  00000d80-00000e95  dn_ipmt_sendTo                    278   2  Code  RX  dn_ipmt.o
+  00000e96-00000f7b  dn_serial_mt_rxHdlcFrame          230   2  Code  RX  dn_serial_mt.o
+  00000f7c-00001071  dn_serial_mt_sendRequest          246   2  Code  RX  dn_serial_mt.o
+  00001072-0000109b  dn_read_uint16_t                   42   2  Code  RX  dn_endianness.o
+  0000109c-000010e1  dn_read_uint32_t                   70   2  Code  RX  dn_endianness.o
+  000010e2-000010e3  dn_lock                             2   2  Code  RX  dn_lock.o
+  000010e4-000010e5  dn_unlock                           2   2  Code  RX  dn_lock.o
+  000010e6-00001123  __NVIC_SetPriority                 62   2  Code  RX  dn_uart.o
+  00001124-00001125  dn_uart_txFlush                     2   2  Code  RX  dn_uart.o
+  00001126-0000119b  UARTE0_UART0_IRQHandler           118   2  Code  RX  dn_uart.o
+  0000119c-000011b5  dn_ipmt_reply_cb                   26   2  Code  RX  ntw.o
+  000011b6-0000121b  fsm_scheduleEvent                 102   2  Code  RX  ntw.o
+  0000121c-00001259  __NVIC_SetPriority                 62   2  Code  RX  ntw.o
+  0000125a-0000126f  fsm_setCallback                    22   2  Code  RX  ntw.o
+  00001270-000012f1  api_getMoteStatus_reply           130   2  Code  RX  ntw.o
+  000012f2-0000132f  api_openSocket                     62   2  Code  RX  ntw.o
+  00001330-00001371  api_bindSocket                     66   2  Code  RX  ntw.o
+  00001372-00001397  api_bindSocket_reply               38   2  Code  RX  ntw.o
+  00001398-000013ad  api_join_reply                     22   2  Code  RX  ntw.o
+  000013ae-000013c3  api_sendTo_reply                   22   2  Code  RX  ntw.o
+  000013c4-000013c5  NMI_Handler                         2   2  Code  RX  nrf52833_Vectors.o
+  000013c6-000013c7  SVC_Handler                         2   2  Code  RX  nrf52833_Vectors.o
+  000013c8-000013c9  PendSV_Handler                      2   2  Code  RX  nrf52833_Vectors.o
+  000013ca-000013cb  SysTick_Handler                     2   2  Code  RX  nrf52833_Vectors.o
+  000013cc-000013cd  POWER_CLOCK_IRQHandler              2   2  Code  RX  nrf52833_Vectors.o
+  000013ce-000013cf  SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler
+                                                         2   2  Code  RX  nrf52833_Vectors.o
+  000013d0-000013d1  SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
+                                                         2   2  Code  RX  nrf52833_Vectors.o
+  000013d2-000013d3  NFCT_IRQHandler                     2   2  Code  RX  nrf52833_Vectors.o
+  000013d4-000013d5  SAADC_IRQHandler                    2   2  Code  RX  nrf52833_Vectors.o
+  000013d6-000013d7  TIMER0_IRQHandler                   2   2  Code  RX  nrf52833_Vectors.o
+  000013d8-000013d9  TIMER1_IRQHandler                   2   2  Code  RX  nrf52833_Vectors.o
+  000013da-000013db  TIMER2_IRQHandler                   2   2  Code  RX  nrf52833_Vectors.o
+  000013dc-000013dd  TEMP_IRQHandler                     2   2  Code  RX  nrf52833_Vectors.o
+  000013de-000013df  RNG_IRQHandler                      2   2  Code  RX  nrf52833_Vectors.o
+  000013e0-000013e1  ECB_IRQHandler                      2   2  Code  RX  nrf52833_Vectors.o
+  000013e2-000013e3  CCM_AAR_IRQHandler                  2   2  Code  RX  nrf52833_Vectors.o
+  000013e4-000013e5  WDT_IRQHandler                      2   2  Code  RX  nrf52833_Vectors.o
+  000013e6-000013e7  QDEC_IRQHandler                     2   2  Code  RX  nrf52833_Vectors.o
+  000013e8-000013e9  COMP_LPCOMP_IRQHandler              2   2  Code  RX  nrf52833_Vectors.o
+  000013ea-000013eb  SWI0_EGU0_IRQHandler                2   2  Code  RX  nrf52833_Vectors.o
+  000013ec-000013ed  SWI1_EGU1_IRQHandler                2   2  Code  RX  nrf52833_Vectors.o
+  000013ee-000013ef  SWI2_EGU2_IRQHandler                2   2  Code  RX  nrf52833_Vectors.o
+  000013f0-000013f1  SWI3_EGU3_IRQHandler                2   2  Code  RX  nrf52833_Vectors.o
+  000013f2-000013f3  SWI4_EGU4_IRQHandler                2   2  Code  RX  nrf52833_Vectors.o
+  000013f4-000013f5  SWI5_EGU5_IRQHandler                2   2  Code  RX  nrf52833_Vectors.o
+  000013f6-000013f7  TIMER3_IRQHandler                   2   2  Code  RX  nrf52833_Vectors.o
+  000013f8-000013f9  TIMER4_IRQHandler                   2   2  Code  RX  nrf52833_Vectors.o
+  000013fa-000013fb  PWM0_IRQHandler                     2   2  Code  RX  nrf52833_Vectors.o
+  000013fc-000013fd  PDM_IRQHandler                      2   2  Code  RX  nrf52833_Vectors.o
+  000013fe-000013ff  MWU_IRQHandler                      2   2  Code  RX  nrf52833_Vectors.o
+  00001400-00001401  PWM1_IRQHandler                     2   2  Code  RX  nrf52833_Vectors.o
+  00001402-00001403  PWM2_IRQHandler                     2   2  Code  RX  nrf52833_Vectors.o
+  00001404-00001405  SPIM2_SPIS2_SPI2_IRQHandler
+                                                         2   2  Code  RX  nrf52833_Vectors.o
+  00001406-00001407  RTC2_IRQHandler                     2   2  Code  RX  nrf52833_Vectors.o
+  00001408-00001409  I2S_IRQHandler                      2   2  Code  RX  nrf52833_Vectors.o
+  0000140a-0000140b  FPU_IRQHandler                      2   2  Code  RX  nrf52833_Vectors.o
+  0000140c-0000140d  USBD_IRQHandler                     2   2  Code  RX  nrf52833_Vectors.o
+  0000140e-0000140f  UARTE1_IRQHandler                   2   2  Code  RX  nrf52833_Vectors.o
+  00001410-00001411  PWM3_IRQHandler                     2   2  Code  RX  nrf52833_Vectors.o
+  00001412-00001413  SPIM3_IRQHandler                    2   2  Code  RX  nrf52833_Vectors.o
+  00001414-00001415  Dummy_Handler                       2   2  Code  RX  nrf52833_Vectors.o
+  00001416-00001429  SystemCoreClockUpdate              20   2  Code  RX  system_nrf52.o
+  0000142a-00001565  main                              316   2  Code  RX  02drv_ntw.o
+  00001566-00001591  __NVIC_EnableIRQ                   44   2  Code  RX  02drv_ntw.o
+  00001592-00001599  board_sleep                         8   2  Code  RX  board.o
+  0000159a-000015ed  GPIOTE_IRQHandler                  84   2  Code  RX  gpio.o
+  000015ee-00001619  __NVIC_ClearPendingIRQ             44   2  Code  RX  periodictimer.o
+  0000161a-00001645  __NVIC_EnableIRQ                   44   2  Code  RX  periodictimer.o
+  00001646-000016ad  RTC0_IRQHandler                   104   2  Code  RX  periodictimer.o
+  000016ae-000016d9  dn_hdlc_init                       44   2  Code  RX  dn_hdlc.o
+  000016da-00001749  dn_hdlc_inputWrite                112   2  Code  RX  dn_hdlc.o
+  0000174a-0000177d  dn_hdlc_outputClose                52   2  Code  RX  dn_hdlc.o
+  0000177e-00001791  dn_hdlc_inputOpen                  20   2  Code  RX  dn_hdlc.o
+  00001792-000017cd  dn_hdlc_inputClose                 60   2  Code  RX  dn_hdlc.o
+  000017ce-000019cd  dn_hdlc_fcstab                    512   2  Cnst  RO  dn_hdlc.o
+  000019ce-00001a59  dn_ipmt_getParameter_moteStatus
+                                                       140   2  Code  RX  dn_ipmt.o
+  00001a5a-00001acd  dn_ipmt_join_reply                116   2  Code  RX  dn_ipmt.o
+  00001ace-00001b59  dn_ipmt_openSocket_reply          140   2  Code  RX  dn_ipmt.o
+  00001b5a-00001bfd  dn_ipmt_bindSocket                164   2  Code  RX  dn_ipmt.o
+  00001bfe-00001c71  dn_ipmt_bindSocket_reply          116   2  Code  RX  dn_ipmt.o
+  00001c72-00001ce5  dn_ipmt_sendTo_reply              116   2  Code  RX  dn_ipmt.o
+  00001ce6-00001d15  dn_serial_mt_init                  48   2  Code  RX  dn_serial_mt.o
+  00001d16-00001d75  dn_serial_mt_dispatch_response
+                                                        96   2  Code  RX  dn_serial_mt.o
+  00001d76-00001de9  dn_serial_sendReply               116   2  Code  RX  dn_serial_mt.o
+  00001dea-00001e05  dn_write_uint16_t                  28   2  Code  RX  dn_endianness.o
+  00001e06-00001e91  dn_uart_init                      140   2  Code  RX  dn_uart.o
+  00001e92-00001ebd  __NVIC_ClearPendingIRQ             44   2  Code  RX  dn_uart.o
+  00001ebe-00001ee9  __NVIC_EnableIRQ                   44   2  Code  RX  dn_uart.o
+  00001eea-00001f2d  dn_uart_txByte                     68   2  Code  RX  dn_uart.o
+  00001f2e-00001f8d  ntw_init                           96   2  Code  RX  ntw.o
+  00001f8e-00002035  dn_ipmt_notif_cb                  168   2  Code  RX  ntw.o
+  00002036-00002071  api_getMoteStatus                  60   2  Code  RX  ntw.o
+  00002072-00002089  ntw_transmit                       24   2  Code  RX  ntw.o
+  0000208a-0000213d  api_sendTo                        180   2  Code  RX  ntw.o
+  0000213e-00002169  __NVIC_ClearPendingIRQ             44   2  Code  RX  ntw.o
+  0000216a-00002195  __NVIC_EnableIRQ                   44   2  Code  RX  ntw.o
+  00002196-000021b1  fsm_cancelEvent                    28   2  Code  RX  ntw.o
+  000021b2-000021c9  api_response_timeout               24   2  Code  RX  ntw.o
+  000021ca-00002205  api_openSocket_reply               60   2  Code  RX  ntw.o
+  00002206-00002241  api_join                           60   2  Code  RX  ntw.o
+  00002242-00002295  RTC1_IRQHandler                    84   2  Code  RX  ntw.o
+  00002296-000022ad  reset_handler                      24   2  Code  RX  nRF_Startup.o
+  000022ae-000022af  ( UNUSED .=.+2 )                    2   -  ----  -   -
+  000022b0-000022b3  [.init_array]                       4   4  ----  --  nRF_Startup.o
+  000022b4-000022d7  __SEGGER_init_ctors                36   4  Code  RX  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  000022d8-000022fb  __SEGGER_init_table__              36   4  Cnst  RO  [ Linker created ]
+  000022fc-00002307  __SEGGER_init_data__               12   4  Cnst  RO  [ Linker created ]
+  00002308-00002319  __SEGGER_init_zero                 18   2  Code  RX  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  0000231a-0000232d  __SEGGER_init_copy                 20   2  Code  RX  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  0000232e-1fffffff  ( UNUSED .=.+536861906 )   536 861 906
+                                                             -  ----  -   -
+  20000000-2000010f  ntw_vars                          272   4  Zero  ZI  ntw.o
+  20000110-2000021f  dn_uart_dbg                       272   4  Zero  ZI  dn_uart.o
+  20000220-200002b7  dn_ipmt_vars                      152   4  Zero  ZI  dn_ipmt.o
+  200002b8-20000347  dn_hdlc_vars                      144   4  Zero  ZI  dn_hdlc.o
+  20000348-2000037f  ntw_dbg                            56   4  Zero  ZI  ntw.o
+  20000380-2000038f  app_dbg                            16   4  Zero  ZI  02drv_ntw.o
+  20000390-2000039b  periodictimer_vars                 12   4  Zero  ZI  periodictimer.o
+  2000039c-200003a7  dn_serial_mt_vars                  12   4  Zero  ZI  dn_serial_mt.o
+  200003a8-200003af  periodictimer_dbg                   8   4  Zero  ZI  periodictimer.o
+  200003b0-200003b7  gpio_vars                           8   4  Zero  ZI  gpio.o
+  200003b8-200003bb  dn_uart_vars                        4   4  Zero  ZI  dn_uart.o
+  200003bc-200003bc  app_vars                            1   1  Zero  ZI  02drv_ntw.o
+  200003bd-200003bf  ( UNUSED .=.+3 )                    3   -  ----  -   -
+  200003c0-200003c3  SystemCoreClock                     4   4  Init  RW  system_nrf52.o
+  200003c4-200003cb  pdu                                 8   1  Init  RW  02drv_ntw.o
+  200003cc-2001f7ff  ( UNUSED .=.+128052 )         128 052   -  ----  -   -
+  2001f800-2001ffff  [.bss.block.stack]              2 048   8  None  ZI  [ Linker created ]
+
+
+***********************************************************************************************
+***                                                                                         ***
+***                                       SYMBOL LIST                                       ***
+***                                                                                         ***
+***********************************************************************************************
+
+Function symbols by name:
+
+  Symbol name                   Address        Size  Align  Type  Bd  Object File
+  -------------------------  ----------  ----------  -----  ----  --  -----------
+  CCM_AAR_IRQHandler         0x000013E3                  2  Code  Wk  nrf52833_Vectors.o
+  COMP_LPCOMP_IRQHandler     0x000013E9                  2  Code  Wk  nrf52833_Vectors.o
+  Dummy_Handler              0x00001415                  2  Code  Wk  nrf52833_Vectors.o
+  ECB_IRQHandler             0x000013E1                  2  Code  Wk  nrf52833_Vectors.o
+  FPU_IRQHandler             0x0000140B                  2  Code  Wk  nrf52833_Vectors.o
+  GPIOTE_IRQHandler          0x0000159B          84      2  Code  Gb  gpio.o
+  HardFault_Handler          0x00000115                  4  Code  Wk  nRF_Startup.o
+  I2S_IRQHandler             0x00001409                  2  Code  Wk  nrf52833_Vectors.o
+  MWU_IRQHandler             0x000013FF                  2  Code  Wk  nrf52833_Vectors.o
+  NFCT_IRQHandler            0x000013D3                  2  Code  Wk  nrf52833_Vectors.o
+  NMI_Handler                0x000013C5                  2  Code  Wk  nrf52833_Vectors.o
+  PDM_IRQHandler             0x000013FD                  2  Code  Wk  nrf52833_Vectors.o
+  POWER_CLOCK_IRQHandler     0x000013CD                  2  Code  Wk  nrf52833_Vectors.o
+  PWM0_IRQHandler            0x000013FB                  2  Code  Wk  nrf52833_Vectors.o
+  PWM1_IRQHandler            0x00001401                  2  Code  Wk  nrf52833_Vectors.o
+  PWM2_IRQHandler            0x00001403                  2  Code  Wk  nrf52833_Vectors.o
+  PWM3_IRQHandler            0x00001411                  2  Code  Wk  nrf52833_Vectors.o
+  PendSV_Handler             0x000013C9                  2  Code  Wk  nrf52833_Vectors.o
+  QDEC_IRQHandler            0x000013E7                  2  Code  Wk  nrf52833_Vectors.o
+  RADIO_IRQHandler           0x0000088F          26      2  Code  Gb  02drv_ntw.o
+  RNG_IRQHandler             0x000013DF                  2  Code  Wk  nrf52833_Vectors.o
+  RTC0_IRQHandler            0x00001647         104      2  Code  Gb  periodictimer.o
+  RTC1_IRQHandler            0x00002243          84      2  Code  Gb  ntw.o
+  RTC2_IRQHandler            0x00001407                  2  Code  Wk  nrf52833_Vectors.o
+  Reset_Handler              0x00002297                  2  Code  Gb  nRF_Startup.o
+  SAADC_IRQHandler           0x000013D5                  2  Code  Wk  nrf52833_Vectors.o
+  SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler
+                             0x000013CF                  2  Code  Wk  nrf52833_Vectors.o
+  SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
+                             0x000013D1                  2  Code  Wk  nrf52833_Vectors.o
+  SPIM2_SPIS2_SPI2_IRQHandler
+                             0x00001405                  2  Code  Wk  nrf52833_Vectors.o
+  SPIM3_IRQHandler           0x00001413                  2  Code  Wk  nrf52833_Vectors.o
+  SVC_Handler                0x000013C7                  2  Code  Wk  nrf52833_Vectors.o
+  SWI0_EGU0_IRQHandler       0x000013EB                  2  Code  Wk  nrf52833_Vectors.o
+  SWI1_EGU1_IRQHandler       0x000013ED                  2  Code  Wk  nrf52833_Vectors.o
+  SWI2_EGU2_IRQHandler       0x000013EF                  2  Code  Wk  nrf52833_Vectors.o
+  SWI3_EGU3_IRQHandler       0x000013F1                  2  Code  Wk  nrf52833_Vectors.o
+  SWI4_EGU4_IRQHandler       0x000013F3                  2  Code  Wk  nrf52833_Vectors.o
+  SWI5_EGU5_IRQHandler       0x000013F5                  2  Code  Wk  nrf52833_Vectors.o
+  SysTick_Handler            0x000013CB                  2  Code  Wk  nrf52833_Vectors.o
+  SystemCoreClockUpdate      0x00001417          20      2  Code  Gb  system_nrf52.o
+  SystemInit                 0x00000477         458      2  Code  Gb  system_nrf52.o
+  TEMP_IRQHandler            0x000013DD                  2  Code  Wk  nrf52833_Vectors.o
+  TIMER0_IRQHandler          0x000013D7                  2  Code  Wk  nrf52833_Vectors.o
+  TIMER1_IRQHandler          0x000013D9                  2  Code  Wk  nrf52833_Vectors.o
+  TIMER2_IRQHandler          0x000013DB                  2  Code  Wk  nrf52833_Vectors.o
+  TIMER3_IRQHandler          0x000013F7                  2  Code  Wk  nrf52833_Vectors.o
+  TIMER4_IRQHandler          0x000013F9                  2  Code  Wk  nrf52833_Vectors.o
+  UARTE0_UART0_IRQHandler    0x00001127         118      2  Code  Gb  dn_uart.o
+  UARTE1_IRQHandler          0x0000140F                  2  Code  Wk  nrf52833_Vectors.o
+  USBD_IRQHandler            0x0000140D                  2  Code  Wk  nrf52833_Vectors.o
+  WDT_IRQHandler             0x000013E5                  2  Code  Wk  nrf52833_Vectors.o
+  __NVIC_ClearPendingIRQ     0x000015EF          44      2  Code  Lc  periodictimer.o
+  __NVIC_ClearPendingIRQ     0x00001E93          44      2  Code  Lc  dn_uart.o
+  __NVIC_ClearPendingIRQ     0x0000213F          44      2  Code  Lc  ntw.o
+  __NVIC_EnableIRQ           0x00001567          44      2  Code  Lc  02drv_ntw.o
+  __NVIC_EnableIRQ           0x0000161B          44      2  Code  Lc  periodictimer.o
+  __NVIC_EnableIRQ           0x00001EBF          44      2  Code  Lc  dn_uart.o
+  __NVIC_EnableIRQ           0x0000216B          44      2  Code  Lc  ntw.o
+  __NVIC_SetPriority         0x00000975          62      2  Code  Lc  periodictimer.o
+  __NVIC_SetPriority         0x000010E7          62      2  Code  Lc  dn_uart.o
+  __NVIC_SetPriority         0x0000121D          62      2  Code  Lc  ntw.o
+  __SEGGER_init_copy         0x0000231B          20      2  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __SEGGER_init_ctors        0x000022B5          26      4  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __SEGGER_init_done         0x0000010B                  4  Code  Gb  SEGGER_THUMB_Startup.o
+  __SEGGER_init_zero         0x00002309          18      2  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __aeabi_memclr             0x00000199         104      4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __aeabi_memclr4            0x00000199                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __aeabi_memclr8            0x00000199                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __aeabi_memcpy             0x0000013D                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __aeabi_memcpy4            0x0000015B                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __aeabi_memcpy8            0x0000015B                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __aeabi_memset             0x0000019B                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __aeabi_memset4            0x0000019B                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __aeabi_memset8            0x0000019B                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __startup_complete         0x0000010B                  4  Code  Gb  SEGGER_THUMB_Startup.o
+  _ntw_receive_cb            0x000007E7          66      2  Code  Gb  02drv_ntw.o
+  _periodtimer_cb            0x00000829         102      2  Code  Gb  02drv_ntw.o
+  _start                     0x00000101          14      4  Code  Gb  SEGGER_THUMB_Startup.o
+  api_bindSocket             0x00001331          66      2  Code  Gb  ntw.o
+  api_bindSocket_reply       0x00001373          38      2  Code  Gb  ntw.o
+  api_getMoteStatus          0x00002037          60      2  Code  Gb  ntw.o
+  api_getMoteStatus_reply    0x00001271         130      2  Code  Gb  ntw.o
+  api_join                   0x00002207          60      2  Code  Gb  ntw.o
+  api_join_reply             0x00001399          22      2  Code  Gb  ntw.o
+  api_openSocket             0x000012F3          62      2  Code  Gb  ntw.o
+  api_openSocket_reply       0x000021CB          60      2  Code  Gb  ntw.o
+  api_response_timeout       0x000021B3          24      2  Code  Gb  ntw.o
+  api_sendTo                 0x0000208B         180      2  Code  Gb  ntw.o
+  api_sendTo_reply           0x000013AF          22      2  Code  Gb  ntw.o
+  board_init                 0x000008A9          82      2  Code  Gb  board.o
+  board_sleep                0x00001593           8      2  Code  Gb  board.o
+  dn_hdlc_crcIteration       0x00000B09          42      2  Code  Gb  dn_hdlc.o
+  dn_hdlc_init               0x000016AF          44      2  Code  Gb  dn_hdlc.o
+  dn_hdlc_inputClose         0x00001793          60      2  Code  Gb  dn_hdlc.o
+  dn_hdlc_inputOpen          0x0000177F          20      2  Code  Gb  dn_hdlc.o
+  dn_hdlc_inputWrite         0x000016DB         112      2  Code  Gb  dn_hdlc.o
+  dn_hdlc_outputClose        0x0000174B          52      2  Code  Gb  dn_hdlc.o
+  dn_hdlc_outputOpen         0x00000A9D          26      2  Code  Gb  dn_hdlc.o
+  dn_hdlc_outputWrite        0x00000AB7          82      2  Code  Gb  dn_hdlc.o
+  dn_hdlc_rxByte             0x000009B3         234      2  Code  Gb  dn_hdlc.o
+  dn_ipmt_bindSocket         0x00001B5B         164      2  Code  Gb  dn_ipmt.o
+  dn_ipmt_bindSocket_reply   0x00001BFF         116      2  Code  Gb  dn_ipmt.o
+  dn_ipmt_cancelTx           0x00000B7D          26      2  Code  Gb  dn_ipmt.o
+  dn_ipmt_getParameter_moteStatus
+                             0x000019CF         140      2  Code  Gb  dn_ipmt.o
+  dn_ipmt_getParameter_moteStatus_reply
+                             0x00000B97         218      2  Code  Gb  dn_ipmt.o
+  dn_ipmt_init               0x00000B33          74      2  Code  Gb  dn_ipmt.o
+  dn_ipmt_join               0x00000C71         130      2  Code  Gb  dn_ipmt.o
+  dn_ipmt_join_reply         0x00001A5B         116      2  Code  Gb  dn_ipmt.o
+  dn_ipmt_notif_cb           0x00001F8F         168      2  Code  Gb  ntw.o
+  dn_ipmt_openSocket         0x00000CF3         142      2  Code  Gb  dn_ipmt.o
+  dn_ipmt_openSocket_reply   0x00001ACF         140      2  Code  Gb  dn_ipmt.o
+  dn_ipmt_reply_cb           0x0000119D          26      2  Code  Gb  ntw.o
+  dn_ipmt_rxSerialRequest    0x00000201         630      4  Code  Gb  dn_ipmt.o
+  dn_ipmt_sendTo             0x00000D81         278      2  Code  Gb  dn_ipmt.o
+  dn_ipmt_sendTo_reply       0x00001C73         116      2  Code  Gb  dn_ipmt.o
+  dn_lock                    0x000010E3           2      2  Code  Gb  dn_lock.o
+  dn_read_uint16_t           0x00001073          42      2  Code  Gb  dn_endianness.o
+  dn_read_uint32_t           0x0000109D          70      2  Code  Gb  dn_endianness.o
+  dn_serial_mt_dispatch_response
+                             0x00001D17          96      2  Code  Gb  dn_serial_mt.o
+  dn_serial_mt_init          0x00001CE7          48      2  Code  Gb  dn_serial_mt.o
+  dn_serial_mt_rxHdlcFrame   0x00000E97         230      2  Code  Gb  dn_serial_mt.o
+  dn_serial_mt_sendRequest   0x00000F7D         246      2  Code  Gb  dn_serial_mt.o
+  dn_serial_sendReply        0x00001D77         116      2  Code  Gb  dn_serial_mt.o
+  dn_uart_init               0x00001E07         140      2  Code  Gb  dn_uart.o
+  dn_uart_txByte             0x00001EEB          68      2  Code  Gb  dn_uart.o
+  dn_uart_txFlush            0x00001125           2      2  Code  Gb  dn_uart.o
+  dn_unlock                  0x000010E5           2      2  Code  Gb  dn_lock.o
+  dn_write_uint16_t          0x00001DEB          28      2  Code  Gb  dn_endianness.o
+  exit                       0x0000010F           2      4  Code  Gb  SEGGER_THUMB_Startup.o
+  fsm_cancelEvent            0x00002197          28      2  Code  Gb  ntw.o
+  fsm_scheduleEvent          0x000011B7         102      2  Code  Gb  ntw.o
+  fsm_setCallback            0x0000125B          22      2  Code  Gb  ntw.o
+  main                       0x0000142B         316      2  Code  Gb  02drv_ntw.o
+  memcpy                     0x0000013D          92      4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  memset                     0x000001A1                  4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  nrf52_configuration_249    0x00000785          98      2  Code  Lc  system_nrf52.o
+  nrf52_errata_136           0x00000705          98      2  Code  Lc  system_nrf52.o
+  nrf52_errata_36            0x00000641          98      2  Code  Lc  system_nrf52.o
+  nrf52_errata_66            0x000006A3          98      2  Code  Lc  system_nrf52.o
+  nrf52_handle_approtect     0x00000767          30      2  Code  Lc  system_nrf52.o
+  ntw_init                   0x00001F2F          96      2  Code  Gb  ntw.o
+  ntw_transmit               0x00002073          24      2  Code  Gb  ntw.o
+  periodictimer_init         0x000008FB         122      2  Code  Gb  periodictimer.o
+  reset_handler              0x00002297                  2  Code  Gb  nRF_Startup.o
+
+Function symbols by address:
+
+     Address  Symbol name                      Size  Align  Type  Bd  Object File
+  ----------  -------------------------  ----------  -----  ----  --  -----------
+  0x00000101  _start                             14      4  Code  Gb  SEGGER_THUMB_Startup.o
+  0x0000010B  __startup_complete                         4  Code  Gb  SEGGER_THUMB_Startup.o
+  0x0000010B  __SEGGER_init_done                         4  Code  Gb  SEGGER_THUMB_Startup.o
+  0x0000010F  exit                                2      4  Code  Gb  SEGGER_THUMB_Startup.o
+  0x00000115  HardFault_Handler                          4  Code  Wk  nRF_Startup.o
+  0x0000013D  memcpy                             92      4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  0x0000013D  __aeabi_memcpy                             4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  0x0000015B  __aeabi_memcpy8                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  0x0000015B  __aeabi_memcpy4                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  0x00000199  __aeabi_memclr8                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  0x00000199  __aeabi_memclr4                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  0x00000199  __aeabi_memclr                    104      4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  0x0000019B  __aeabi_memset8                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  0x0000019B  __aeabi_memset4                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  0x0000019B  __aeabi_memset                             4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  0x000001A1  memset                                     4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  0x00000201  dn_ipmt_rxSerialRequest           630      4  Code  Gb  dn_ipmt.o
+  0x00000477  SystemInit                        458      2  Code  Gb  system_nrf52.o
+  0x00000641  nrf52_errata_36                    98      2  Code  Lc  system_nrf52.o
+  0x000006A3  nrf52_errata_66                    98      2  Code  Lc  system_nrf52.o
+  0x00000705  nrf52_errata_136                   98      2  Code  Lc  system_nrf52.o
+  0x00000767  nrf52_handle_approtect             30      2  Code  Lc  system_nrf52.o
+  0x00000785  nrf52_configuration_249            98      2  Code  Lc  system_nrf52.o
+  0x000007E7  _ntw_receive_cb                    66      2  Code  Gb  02drv_ntw.o
+  0x00000829  _periodtimer_cb                   102      2  Code  Gb  02drv_ntw.o
+  0x0000088F  RADIO_IRQHandler                   26      2  Code  Gb  02drv_ntw.o
+  0x000008A9  board_init                         82      2  Code  Gb  board.o
+  0x000008FB  periodictimer_init                122      2  Code  Gb  periodictimer.o
+  0x00000975  __NVIC_SetPriority                 62      2  Code  Lc  periodictimer.o
+  0x000009B3  dn_hdlc_rxByte                    234      2  Code  Gb  dn_hdlc.o
+  0x00000A9D  dn_hdlc_outputOpen                 26      2  Code  Gb  dn_hdlc.o
+  0x00000AB7  dn_hdlc_outputWrite                82      2  Code  Gb  dn_hdlc.o
+  0x00000B09  dn_hdlc_crcIteration               42      2  Code  Gb  dn_hdlc.o
+  0x00000B33  dn_ipmt_init                       74      2  Code  Gb  dn_ipmt.o
+  0x00000B7D  dn_ipmt_cancelTx                   26      2  Code  Gb  dn_ipmt.o
+  0x00000B97  dn_ipmt_getParameter_moteStatus_reply
+                                                218      2  Code  Gb  dn_ipmt.o
+  0x00000C71  dn_ipmt_join                      130      2  Code  Gb  dn_ipmt.o
+  0x00000CF3  dn_ipmt_openSocket                142      2  Code  Gb  dn_ipmt.o
+  0x00000D81  dn_ipmt_sendTo                    278      2  Code  Gb  dn_ipmt.o
+  0x00000E97  dn_serial_mt_rxHdlcFrame          230      2  Code  Gb  dn_serial_mt.o
+  0x00000F7D  dn_serial_mt_sendRequest          246      2  Code  Gb  dn_serial_mt.o
+  0x00001073  dn_read_uint16_t                   42      2  Code  Gb  dn_endianness.o
+  0x0000109D  dn_read_uint32_t                   70      2  Code  Gb  dn_endianness.o
+  0x000010E3  dn_lock                             2      2  Code  Gb  dn_lock.o
+  0x000010E5  dn_unlock                           2      2  Code  Gb  dn_lock.o
+  0x000010E7  __NVIC_SetPriority                 62      2  Code  Lc  dn_uart.o
+  0x00001125  dn_uart_txFlush                     2      2  Code  Gb  dn_uart.o
+  0x00001127  UARTE0_UART0_IRQHandler           118      2  Code  Gb  dn_uart.o
+  0x0000119D  dn_ipmt_reply_cb                   26      2  Code  Gb  ntw.o
+  0x000011B7  fsm_scheduleEvent                 102      2  Code  Gb  ntw.o
+  0x0000121D  __NVIC_SetPriority                 62      2  Code  Lc  ntw.o
+  0x0000125B  fsm_setCallback                    22      2  Code  Gb  ntw.o
+  0x00001271  api_getMoteStatus_reply           130      2  Code  Gb  ntw.o
+  0x000012F3  api_openSocket                     62      2  Code  Gb  ntw.o
+  0x00001331  api_bindSocket                     66      2  Code  Gb  ntw.o
+  0x00001373  api_bindSocket_reply               38      2  Code  Gb  ntw.o
+  0x00001399  api_join_reply                     22      2  Code  Gb  ntw.o
+  0x000013AF  api_sendTo_reply                   22      2  Code  Gb  ntw.o
+  0x000013C5  NMI_Handler                                2  Code  Wk  nrf52833_Vectors.o
+  0x000013C7  SVC_Handler                                2  Code  Wk  nrf52833_Vectors.o
+  0x000013C9  PendSV_Handler                             2  Code  Wk  nrf52833_Vectors.o
+  0x000013CB  SysTick_Handler                            2  Code  Wk  nrf52833_Vectors.o
+  0x000013CD  POWER_CLOCK_IRQHandler                     2  Code  Wk  nrf52833_Vectors.o
+  0x000013CF  SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler
+                                                         2  Code  Wk  nrf52833_Vectors.o
+  0x000013D1  SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
+                                                         2  Code  Wk  nrf52833_Vectors.o
+  0x000013D3  NFCT_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  0x000013D5  SAADC_IRQHandler                           2  Code  Wk  nrf52833_Vectors.o
+  0x000013D7  TIMER0_IRQHandler                          2  Code  Wk  nrf52833_Vectors.o
+  0x000013D9  TIMER1_IRQHandler                          2  Code  Wk  nrf52833_Vectors.o
+  0x000013DB  TIMER2_IRQHandler                          2  Code  Wk  nrf52833_Vectors.o
+  0x000013DD  TEMP_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  0x000013DF  RNG_IRQHandler                             2  Code  Wk  nrf52833_Vectors.o
+  0x000013E1  ECB_IRQHandler                             2  Code  Wk  nrf52833_Vectors.o
+  0x000013E3  CCM_AAR_IRQHandler                         2  Code  Wk  nrf52833_Vectors.o
+  0x000013E5  WDT_IRQHandler                             2  Code  Wk  nrf52833_Vectors.o
+  0x000013E7  QDEC_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  0x000013E9  COMP_LPCOMP_IRQHandler                     2  Code  Wk  nrf52833_Vectors.o
+  0x000013EB  SWI0_EGU0_IRQHandler                       2  Code  Wk  nrf52833_Vectors.o
+  0x000013ED  SWI1_EGU1_IRQHandler                       2  Code  Wk  nrf52833_Vectors.o
+  0x000013EF  SWI2_EGU2_IRQHandler                       2  Code  Wk  nrf52833_Vectors.o
+  0x000013F1  SWI3_EGU3_IRQHandler                       2  Code  Wk  nrf52833_Vectors.o
+  0x000013F3  SWI4_EGU4_IRQHandler                       2  Code  Wk  nrf52833_Vectors.o
+  0x000013F5  SWI5_EGU5_IRQHandler                       2  Code  Wk  nrf52833_Vectors.o
+  0x000013F7  TIMER3_IRQHandler                          2  Code  Wk  nrf52833_Vectors.o
+  0x000013F9  TIMER4_IRQHandler                          2  Code  Wk  nrf52833_Vectors.o
+  0x000013FB  PWM0_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  0x000013FD  PDM_IRQHandler                             2  Code  Wk  nrf52833_Vectors.o
+  0x000013FF  MWU_IRQHandler                             2  Code  Wk  nrf52833_Vectors.o
+  0x00001401  PWM1_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  0x00001403  PWM2_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  0x00001405  SPIM2_SPIS2_SPI2_IRQHandler
+                                                         2  Code  Wk  nrf52833_Vectors.o
+  0x00001407  RTC2_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  0x00001409  I2S_IRQHandler                             2  Code  Wk  nrf52833_Vectors.o
+  0x0000140B  FPU_IRQHandler                             2  Code  Wk  nrf52833_Vectors.o
+  0x0000140D  USBD_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  0x0000140F  UARTE1_IRQHandler                          2  Code  Wk  nrf52833_Vectors.o
+  0x00001411  PWM3_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  0x00001413  SPIM3_IRQHandler                           2  Code  Wk  nrf52833_Vectors.o
+  0x00001415  Dummy_Handler                              2  Code  Wk  nrf52833_Vectors.o
+  0x00001417  SystemCoreClockUpdate              20      2  Code  Gb  system_nrf52.o
+  0x0000142B  main                              316      2  Code  Gb  02drv_ntw.o
+  0x00001567  __NVIC_EnableIRQ                   44      2  Code  Lc  02drv_ntw.o
+  0x00001593  board_sleep                         8      2  Code  Gb  board.o
+  0x0000159B  GPIOTE_IRQHandler                  84      2  Code  Gb  gpio.o
+  0x000015EF  __NVIC_ClearPendingIRQ             44      2  Code  Lc  periodictimer.o
+  0x0000161B  __NVIC_EnableIRQ                   44      2  Code  Lc  periodictimer.o
+  0x00001647  RTC0_IRQHandler                   104      2  Code  Gb  periodictimer.o
+  0x000016AF  dn_hdlc_init                       44      2  Code  Gb  dn_hdlc.o
+  0x000016DB  dn_hdlc_inputWrite                112      2  Code  Gb  dn_hdlc.o
+  0x0000174B  dn_hdlc_outputClose                52      2  Code  Gb  dn_hdlc.o
+  0x0000177F  dn_hdlc_inputOpen                  20      2  Code  Gb  dn_hdlc.o
+  0x00001793  dn_hdlc_inputClose                 60      2  Code  Gb  dn_hdlc.o
+  0x000019CF  dn_ipmt_getParameter_moteStatus
+                                                140      2  Code  Gb  dn_ipmt.o
+  0x00001A5B  dn_ipmt_join_reply                116      2  Code  Gb  dn_ipmt.o
+  0x00001ACF  dn_ipmt_openSocket_reply          140      2  Code  Gb  dn_ipmt.o
+  0x00001B5B  dn_ipmt_bindSocket                164      2  Code  Gb  dn_ipmt.o
+  0x00001BFF  dn_ipmt_bindSocket_reply          116      2  Code  Gb  dn_ipmt.o
+  0x00001C73  dn_ipmt_sendTo_reply              116      2  Code  Gb  dn_ipmt.o
+  0x00001CE7  dn_serial_mt_init                  48      2  Code  Gb  dn_serial_mt.o
+  0x00001D17  dn_serial_mt_dispatch_response
+                                                 96      2  Code  Gb  dn_serial_mt.o
+  0x00001D77  dn_serial_sendReply               116      2  Code  Gb  dn_serial_mt.o
+  0x00001DEB  dn_write_uint16_t                  28      2  Code  Gb  dn_endianness.o
+  0x00001E07  dn_uart_init                      140      2  Code  Gb  dn_uart.o
+  0x00001E93  __NVIC_ClearPendingIRQ             44      2  Code  Lc  dn_uart.o
+  0x00001EBF  __NVIC_EnableIRQ                   44      2  Code  Lc  dn_uart.o
+  0x00001EEB  dn_uart_txByte                     68      2  Code  Gb  dn_uart.o
+  0x00001F2F  ntw_init                           96      2  Code  Gb  ntw.o
+  0x00001F8F  dn_ipmt_notif_cb                  168      2  Code  Gb  ntw.o
+  0x00002037  api_getMoteStatus                  60      2  Code  Gb  ntw.o
+  0x00002073  ntw_transmit                       24      2  Code  Gb  ntw.o
+  0x0000208B  api_sendTo                        180      2  Code  Gb  ntw.o
+  0x0000213F  __NVIC_ClearPendingIRQ             44      2  Code  Lc  ntw.o
+  0x0000216B  __NVIC_EnableIRQ                   44      2  Code  Lc  ntw.o
+  0x00002197  fsm_cancelEvent                    28      2  Code  Gb  ntw.o
+  0x000021B3  api_response_timeout               24      2  Code  Gb  ntw.o
+  0x000021CB  api_openSocket_reply               60      2  Code  Gb  ntw.o
+  0x00002207  api_join                           60      2  Code  Gb  ntw.o
+  0x00002243  RTC1_IRQHandler                    84      2  Code  Gb  ntw.o
+  0x00002297  reset_handler                              2  Code  Gb  nRF_Startup.o
+  0x00002297  Reset_Handler                              2  Code  Gb  nRF_Startup.o
+  0x000022B5  __SEGGER_init_ctors                26      4  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  0x00002309  __SEGGER_init_zero                 18      2  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  0x0000231B  __SEGGER_init_copy                 20      2  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+
+Function symbols by descending size:
+
+  Symbol name                      Size  Align  Type  Bd  Object File
+  -------------------------  ----------  -----  ----  --  -----------
+  dn_ipmt_rxSerialRequest           630      4  Code  Gb  dn_ipmt.o
+  SystemInit                        458      2  Code  Gb  system_nrf52.o
+  main                              316      2  Code  Gb  02drv_ntw.o
+  dn_ipmt_sendTo                    278      2  Code  Gb  dn_ipmt.o
+  dn_serial_mt_sendRequest          246      2  Code  Gb  dn_serial_mt.o
+  dn_hdlc_rxByte                    234      2  Code  Gb  dn_hdlc.o
+  dn_serial_mt_rxHdlcFrame          230      2  Code  Gb  dn_serial_mt.o
+  dn_ipmt_getParameter_moteStatus_reply
+                                    218      2  Code  Gb  dn_ipmt.o
+  api_sendTo                        180      2  Code  Gb  ntw.o
+  dn_ipmt_notif_cb                  168      2  Code  Gb  ntw.o
+  dn_ipmt_bindSocket                164      2  Code  Gb  dn_ipmt.o
+  dn_ipmt_openSocket                142      2  Code  Gb  dn_ipmt.o
+  dn_ipmt_getParameter_moteStatus
+                                    140      2  Code  Gb  dn_ipmt.o
+  dn_ipmt_openSocket_reply          140      2  Code  Gb  dn_ipmt.o
+  dn_uart_init                      140      2  Code  Gb  dn_uart.o
+  api_getMoteStatus_reply           130      2  Code  Gb  ntw.o
+  dn_ipmt_join                      130      2  Code  Gb  dn_ipmt.o
+  periodictimer_init                122      2  Code  Gb  periodictimer.o
+  UARTE0_UART0_IRQHandler           118      2  Code  Gb  dn_uart.o
+  dn_ipmt_bindSocket_reply          116      2  Code  Gb  dn_ipmt.o
+  dn_ipmt_join_reply                116      2  Code  Gb  dn_ipmt.o
+  dn_ipmt_sendTo_reply              116      2  Code  Gb  dn_ipmt.o
+  dn_serial_sendReply               116      2  Code  Gb  dn_serial_mt.o
+  dn_hdlc_inputWrite                112      2  Code  Gb  dn_hdlc.o
+  RTC0_IRQHandler                   104      2  Code  Gb  periodictimer.o
+  __aeabi_memclr                    104      4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  _periodtimer_cb                   102      2  Code  Gb  02drv_ntw.o
+  fsm_scheduleEvent                 102      2  Code  Gb  ntw.o
+  nrf52_configuration_249            98      2  Code  Lc  system_nrf52.o
+  nrf52_errata_136                   98      2  Code  Lc  system_nrf52.o
+  nrf52_errata_36                    98      2  Code  Lc  system_nrf52.o
+  nrf52_errata_66                    98      2  Code  Lc  system_nrf52.o
+  dn_serial_mt_dispatch_response
+                                     96      2  Code  Gb  dn_serial_mt.o
+  ntw_init                           96      2  Code  Gb  ntw.o
+  memcpy                             92      4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  GPIOTE_IRQHandler                  84      2  Code  Gb  gpio.o
+  RTC1_IRQHandler                    84      2  Code  Gb  ntw.o
+  board_init                         82      2  Code  Gb  board.o
+  dn_hdlc_outputWrite                82      2  Code  Gb  dn_hdlc.o
+  dn_ipmt_init                       74      2  Code  Gb  dn_ipmt.o
+  dn_read_uint32_t                   70      2  Code  Gb  dn_endianness.o
+  dn_uart_txByte                     68      2  Code  Gb  dn_uart.o
+  _ntw_receive_cb                    66      2  Code  Gb  02drv_ntw.o
+  api_bindSocket                     66      2  Code  Gb  ntw.o
+  __NVIC_SetPriority                 62      2  Code  Lc  periodictimer.o
+  __NVIC_SetPriority                 62      2  Code  Lc  dn_uart.o
+  __NVIC_SetPriority                 62      2  Code  Lc  ntw.o
+  api_openSocket                     62      2  Code  Gb  ntw.o
+  api_getMoteStatus                  60      2  Code  Gb  ntw.o
+  api_join                           60      2  Code  Gb  ntw.o
+  api_openSocket_reply               60      2  Code  Gb  ntw.o
+  dn_hdlc_inputClose                 60      2  Code  Gb  dn_hdlc.o
+  dn_hdlc_outputClose                52      2  Code  Gb  dn_hdlc.o
+  dn_serial_mt_init                  48      2  Code  Gb  dn_serial_mt.o
+  __NVIC_ClearPendingIRQ             44      2  Code  Lc  periodictimer.o
+  __NVIC_ClearPendingIRQ             44      2  Code  Lc  dn_uart.o
+  __NVIC_ClearPendingIRQ             44      2  Code  Lc  ntw.o
+  __NVIC_EnableIRQ                   44      2  Code  Lc  02drv_ntw.o
+  __NVIC_EnableIRQ                   44      2  Code  Lc  periodictimer.o
+  __NVIC_EnableIRQ                   44      2  Code  Lc  dn_uart.o
+  __NVIC_EnableIRQ                   44      2  Code  Lc  ntw.o
+  dn_hdlc_init                       44      2  Code  Gb  dn_hdlc.o
+  dn_hdlc_crcIteration               42      2  Code  Gb  dn_hdlc.o
+  dn_read_uint16_t                   42      2  Code  Gb  dn_endianness.o
+  api_bindSocket_reply               38      2  Code  Gb  ntw.o
+  nrf52_handle_approtect             30      2  Code  Lc  system_nrf52.o
+  dn_write_uint16_t                  28      2  Code  Gb  dn_endianness.o
+  fsm_cancelEvent                    28      2  Code  Gb  ntw.o
+  RADIO_IRQHandler                   26      2  Code  Gb  02drv_ntw.o
+  __SEGGER_init_ctors                26      4  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  dn_hdlc_outputOpen                 26      2  Code  Gb  dn_hdlc.o
+  dn_ipmt_cancelTx                   26      2  Code  Gb  dn_ipmt.o
+  dn_ipmt_reply_cb                   26      2  Code  Gb  ntw.o
+  api_response_timeout               24      2  Code  Gb  ntw.o
+  ntw_transmit                       24      2  Code  Gb  ntw.o
+  api_join_reply                     22      2  Code  Gb  ntw.o
+  api_sendTo_reply                   22      2  Code  Gb  ntw.o
+  fsm_setCallback                    22      2  Code  Gb  ntw.o
+  SystemCoreClockUpdate              20      2  Code  Gb  system_nrf52.o
+  __SEGGER_init_copy                 20      2  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  dn_hdlc_inputOpen                  20      2  Code  Gb  dn_hdlc.o
+  __SEGGER_init_zero                 18      2  Code  Wk  SEGGER_crtinit.o (SEGGER_crtinit_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  _start                             14      4  Code  Gb  SEGGER_THUMB_Startup.o
+  board_sleep                         8      2  Code  Gb  board.o
+  dn_lock                             2      2  Code  Gb  dn_lock.o
+  dn_uart_txFlush                     2      2  Code  Gb  dn_uart.o
+  dn_unlock                           2      2  Code  Gb  dn_lock.o
+  exit                                2      4  Code  Gb  SEGGER_THUMB_Startup.o
+  CCM_AAR_IRQHandler                         2  Code  Wk  nrf52833_Vectors.o
+  COMP_LPCOMP_IRQHandler                     2  Code  Wk  nrf52833_Vectors.o
+  Dummy_Handler                              2  Code  Wk  nrf52833_Vectors.o
+  ECB_IRQHandler                             2  Code  Wk  nrf52833_Vectors.o
+  FPU_IRQHandler                             2  Code  Wk  nrf52833_Vectors.o
+  HardFault_Handler                          4  Code  Wk  nRF_Startup.o
+  I2S_IRQHandler                             2  Code  Wk  nrf52833_Vectors.o
+  MWU_IRQHandler                             2  Code  Wk  nrf52833_Vectors.o
+  NFCT_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  NMI_Handler                                2  Code  Wk  nrf52833_Vectors.o
+  PDM_IRQHandler                             2  Code  Wk  nrf52833_Vectors.o
+  POWER_CLOCK_IRQHandler                     2  Code  Wk  nrf52833_Vectors.o
+  PWM0_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  PWM1_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  PWM2_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  PWM3_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  PendSV_Handler                             2  Code  Wk  nrf52833_Vectors.o
+  QDEC_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  RNG_IRQHandler                             2  Code  Wk  nrf52833_Vectors.o
+  RTC2_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  Reset_Handler                              2  Code  Gb  nRF_Startup.o
+  SAADC_IRQHandler                           2  Code  Wk  nrf52833_Vectors.o
+  SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler
+                                             2  Code  Wk  nrf52833_Vectors.o
+  SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler
+                                             2  Code  Wk  nrf52833_Vectors.o
+  SPIM2_SPIS2_SPI2_IRQHandler
+                                             2  Code  Wk  nrf52833_Vectors.o
+  SPIM3_IRQHandler                           2  Code  Wk  nrf52833_Vectors.o
+  SVC_Handler                                2  Code  Wk  nrf52833_Vectors.o
+  SWI0_EGU0_IRQHandler                       2  Code  Wk  nrf52833_Vectors.o
+  SWI1_EGU1_IRQHandler                       2  Code  Wk  nrf52833_Vectors.o
+  SWI2_EGU2_IRQHandler                       2  Code  Wk  nrf52833_Vectors.o
+  SWI3_EGU3_IRQHandler                       2  Code  Wk  nrf52833_Vectors.o
+  SWI4_EGU4_IRQHandler                       2  Code  Wk  nrf52833_Vectors.o
+  SWI5_EGU5_IRQHandler                       2  Code  Wk  nrf52833_Vectors.o
+  SysTick_Handler                            2  Code  Wk  nrf52833_Vectors.o
+  TEMP_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  TIMER0_IRQHandler                          2  Code  Wk  nrf52833_Vectors.o
+  TIMER1_IRQHandler                          2  Code  Wk  nrf52833_Vectors.o
+  TIMER2_IRQHandler                          2  Code  Wk  nrf52833_Vectors.o
+  TIMER3_IRQHandler                          2  Code  Wk  nrf52833_Vectors.o
+  TIMER4_IRQHandler                          2  Code  Wk  nrf52833_Vectors.o
+  UARTE1_IRQHandler                          2  Code  Wk  nrf52833_Vectors.o
+  USBD_IRQHandler                            2  Code  Wk  nrf52833_Vectors.o
+  WDT_IRQHandler                             2  Code  Wk  nrf52833_Vectors.o
+  __SEGGER_init_done                         4  Code  Gb  SEGGER_THUMB_Startup.o
+  __aeabi_memclr4                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __aeabi_memclr8                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __aeabi_memcpy                             4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __aeabi_memcpy4                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __aeabi_memcpy8                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __aeabi_memset                             4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __aeabi_memset4                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __aeabi_memset8                            4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  __startup_complete                         4  Code  Gb  SEGGER_THUMB_Startup.o
+  memset                                     4  Code  Wk  strasmops_arm.o (strops_unaligned_v7em_fpv4_sp_d16_hard_t_le_eabi_balanced.a)
+  reset_handler                              2  Code  Gb  nRF_Startup.o
+
+Read-write data symbols by name:
+
+  Symbol name                   Address        Size  Align  Type  Bd  Object File
+  -------------------------  ----------  ----------  -----  ----  --  -----------
+  SystemCoreClock            0x200003C0           4      4  Init  Gb  system_nrf52.o
+  app_dbg                    0x20000380          16      4  Zero  Gb  02drv_ntw.o
+  app_vars                   0x200003BC           1         Zero  Gb  02drv_ntw.o
+  dn_hdlc_vars               0x200002B8         144      4  Zero  Gb  dn_hdlc.o
+  dn_ipmt_vars               0x20000220         152      4  Zero  Gb  dn_ipmt.o
+  dn_serial_mt_vars          0x2000039C          12      4  Zero  Gb  dn_serial_mt.o
+  dn_uart_dbg                0x20000110         272      4  Zero  Gb  dn_uart.o
+  dn_uart_vars               0x200003B8           4      4  Zero  Gb  dn_uart.o
+  gpio_vars                  0x200003B0           8      4  Zero  Gb  gpio.o
+  ntw_dbg                    0x20000348          56      4  Zero  Gb  ntw.o
+  ntw_vars                   0x20000000         272      4  Zero  Gb  ntw.o
+  pdu                        0x200003C4           8         Init  Lc  02drv_ntw.o
+  periodictimer_dbg          0x200003A8           8      4  Zero  Gb  periodictimer.o
+  periodictimer_vars         0x20000390          12      4  Zero  Gb  periodictimer.o
+
+Read-write data symbols by address:
+
+     Address  Symbol name                      Size  Align  Type  Bd  Object File
+  ----------  -------------------------  ----------  -----  ----  --  -----------
+  0x20000000  ntw_vars                          272      4  Zero  Gb  ntw.o
+  0x20000110  dn_uart_dbg                       272      4  Zero  Gb  dn_uart.o
+  0x20000220  dn_ipmt_vars                      152      4  Zero  Gb  dn_ipmt.o
+  0x200002B8  dn_hdlc_vars                      144      4  Zero  Gb  dn_hdlc.o
+  0x20000348  ntw_dbg                            56      4  Zero  Gb  ntw.o
+  0x20000380  app_dbg                            16      4  Zero  Gb  02drv_ntw.o
+  0x20000390  periodictimer_vars                 12      4  Zero  Gb  periodictimer.o
+  0x2000039C  dn_serial_mt_vars                  12      4  Zero  Gb  dn_serial_mt.o
+  0x200003A8  periodictimer_dbg                   8      4  Zero  Gb  periodictimer.o
+  0x200003B0  gpio_vars                           8      4  Zero  Gb  gpio.o
+  0x200003B8  dn_uart_vars                        4      4  Zero  Gb  dn_uart.o
+  0x200003BC  app_vars                            1         Zero  Gb  02drv_ntw.o
+  0x200003C0  SystemCoreClock                     4      4  Init  Gb  system_nrf52.o
+  0x200003C4  pdu                                 8         Init  Lc  02drv_ntw.o
+
+Read-write data symbols by descending size:
+
+  Symbol name                      Size  Align  Type  Bd  Object File
+  -------------------------  ----------  -----  ----  --  -----------
+  dn_uart_dbg                       272      4  Zero  Gb  dn_uart.o
+  ntw_vars                          272      4  Zero  Gb  ntw.o
+  dn_ipmt_vars                      152      4  Zero  Gb  dn_ipmt.o
+  dn_hdlc_vars                      144      4  Zero  Gb  dn_hdlc.o
+  ntw_dbg                            56      4  Zero  Gb  ntw.o
+  app_dbg                            16      4  Zero  Gb  02drv_ntw.o
+  dn_serial_mt_vars                  12      4  Zero  Gb  dn_serial_mt.o
+  periodictimer_vars                 12      4  Zero  Gb  periodictimer.o
+  gpio_vars                           8      4  Zero  Gb  gpio.o
+  pdu                                 8         Init  Lc  02drv_ntw.o
+  periodictimer_dbg                   8      4  Zero  Gb  periodictimer.o
+  SystemCoreClock                     4      4  Init  Gb  system_nrf52.o
+  dn_uart_vars                        4      4  Zero  Gb  dn_uart.o
+  app_vars                            1         Zero  Gb  02drv_ntw.o
+
+Read-only data symbols by name:
+
+  Symbol name                   Address        Size  Align  Type  Bd  Object File
+  -------------------------  ----------  ----------  -----  ----  --  -----------
+  __SEGGER_init_data__       0x000022FC        [12]      4  Cnst  Lc  [ Linker created ]
+  __SEGGER_init_table__      0x000022D8        [36]      4  Cnst  Lc  [ Linker created ]
+  dn_hdlc_fcstab             0x000017CE         512      2  Cnst  Lc  dn_hdlc.o
+
+Read-only data symbols by address:
+
+     Address  Symbol name                      Size  Align  Type  Bd  Object File
+  ----------  -------------------------  ----------  -----  ----  --  -----------
+  0x000017CE  dn_hdlc_fcstab                    512      2  Cnst  Lc  dn_hdlc.o
+  0x000022D8  __SEGGER_init_table__            [36]      4  Cnst  Lc  [ Linker created ]
+  0x000022FC  __SEGGER_init_data__             [12]      4  Cnst  Lc  [ Linker created ]
+
+Untyped symbols by name:
+
+  Symbol name                     Value        Size  Align  Type  Bd  Object File
+  -------------------------  ----------  ----------  -----  ----  --  -----------
+  __CODE_RAM1_segment_end__  0x00820000                     ----  Gb  [ Linker created ]
+  __CODE_RAM1_segment_size__
+                             0x00020000                     ----  Gb  [ Linker created ]
+  __CODE_RAM1_segment_start__
+                             0x00800000                     ----  Gb  [ Linker created ]
+  __CODE_RAM1_segment_used_end__
+                             0x00800000                     ----  Gb  [ Linker created ]
+  __CODE_RAM1_segment_used_size__
+                             0x00000000                     ----  Gb  [ Linker created ]
+  __CODE_RAM1_segment_used_start__
+                             0x00800000                     ----  Gb  [ Linker created ]
+  __FLASH1_segment_end__     0x00080000                     ----  Gb  [ Linker created ]
+  __FLASH1_segment_size__    0x00080000                     ----  Gb  [ Linker created ]
+  __FLASH1_segment_start__   0x00000000                     ----  Gb  [ Linker created ]
+  __FLASH1_segment_used_end__
+                             0x0000232E                     ----  Gb  [ Linker created ]
+  __FLASH1_segment_used_size__
+                             0x0000232E                     ----  Gb  [ Linker created ]
+  __FLASH1_segment_used_start__
+                             0x00000000                     ----  Gb  [ Linker created ]
+  __FLASH_segment_end__      0x00080000                     ----  Gb  [ Linker created ]
+  __FLASH_segment_size__     0x00080000                     ----  Gb  [ Linker created ]
+  __FLASH_segment_start__    0x00000000                     ----  Gb  [ Linker created ]
+  __FLASH_segment_used_end__
+                             0x0000232E                     ----  Gb  [ Linker created ]
+  __FLASH_segment_used_size__
+                             0x0000232E                     ----  Gb  [ Linker created ]
+  __FLASH_segment_used_start__
+                             0x00000000                     ----  Gb  [ Linker created ]
+  __HEAPSIZE__               0x00000400                     ----  Gb  [ Linker created ]
+  __RAM1_segment_end__       0x20020000                     ----  Gb  [ Linker created ]
+  __RAM1_segment_size__      0x00020000                     ----  Gb  [ Linker created ]
+  __RAM1_segment_start__     0x20000000                     ----  Gb  [ Linker created ]
+  __RAM1_segment_used_end__  0x20020000                     ----  Gb  [ Linker created ]
+  __RAM1_segment_used_size__
+                             0x00020000                     ----  Gb  [ Linker created ]
+  __RAM1_segment_used_start__
+                             0x20000000                     ----  Gb  [ Linker created ]
+  __RAM_segment_end__        0x20020000                     ----  Gb  [ Linker created ]
+  __RAM_segment_size__       0x00020000                     ----  Gb  [ Linker created ]
+  __RAM_segment_start__      0x20000000                     ----  Gb  [ Linker created ]
+  __RAM_segment_used_end__   0x20020000                     ----  Gb  [ Linker created ]
+  __RAM_segment_used_size__  0x00020000                     ----  Gb  [ Linker created ]
+  __RAM_segment_used_start__
+                             0x20000000                     ----  Gb  [ Linker created ]
+  __STACKSIZE_PROCESS__      0x00000000                     ----  Gb  [ Linker created ]
+  __STACKSIZE__              0x00000800                     ----  Gb  [ Linker created ]
+  __ctors_end__              0x000022B4                     ----  Gb  [ Linker created ]
+  __ctors_start__            0x000022B0                     ----  Gb  [ Linker created ]
+  __stack_end__              0x20020000                     ----  Gb  [ Linker created ]
+  __thread_pointer$          0x00000000                     ----  Gb  [ Linker created ]
+  _vectors                   0x00000000       [256]    256  Code  Gb  nrf52833_Vectors.o
+  _vectors_end               0x00000100                256  Code  Lc  nrf52833_Vectors.o
+
+Untyped symbols by address:
+
+       Value  Symbol name                      Size  Align  Type  Bd  Object File
+  ----------  -------------------------  ----------  -----  ----  --  -----------
+  0x00000000  _vectors                        [256]    256  Code  Gb  nrf52833_Vectors.o
+  0x00000000  __thread_pointer$                             ----  Gb  [ Linker created ]
+  0x00000000  __STACKSIZE_PROCESS__                         ----  Gb  [ Linker created ]
+  0x00000000  __FLASH_segment_used_start__
+                                                            ----  Gb  [ Linker created ]
+  0x00000000  __FLASH_segment_start__                       ----  Gb  [ Linker created ]
+  0x00000000  __FLASH1_segment_used_start__
+                                                            ----  Gb  [ Linker created ]
+  0x00000000  __FLASH1_segment_start__                      ----  Gb  [ Linker created ]
+  0x00000000  __CODE_RAM1_segment_used_size__
+                                                            ----  Gb  [ Linker created ]
+  0x00000100  _vectors_end                             256  Code  Lc  nrf52833_Vectors.o
+  0x00000400  __HEAPSIZE__                                  ----  Gb  [ Linker created ]
+  0x00000800  __STACKSIZE__                                 ----  Gb  [ Linker created ]
+  0x000022B0  __ctors_start__                               ----  Gb  [ Linker created ]
+  0x000022B4  __ctors_end__                                 ----  Gb  [ Linker created ]
+  0x0000232E  __FLASH_segment_used_size__
+                                                            ----  Gb  [ Linker created ]
+  0x0000232E  __FLASH_segment_used_end__
+                                                            ----  Gb  [ Linker created ]
+  0x0000232E  __FLASH1_segment_used_size__
+                                                            ----  Gb  [ Linker created ]
+  0x0000232E  __FLASH1_segment_used_end__
+                                                            ----  Gb  [ Linker created ]
+  0x00020000  __RAM_segment_used_size__                     ----  Gb  [ Linker created ]
+  0x00020000  __RAM_segment_size__                          ----  Gb  [ Linker created ]
+  0x00020000  __RAM1_segment_used_size__
+                                                            ----  Gb  [ Linker created ]
+  0x00020000  __RAM1_segment_size__                         ----  Gb  [ Linker created ]
+  0x00020000  __CODE_RAM1_segment_size__
+                                                            ----  Gb  [ Linker created ]
+  0x00080000  __FLASH_segment_size__                        ----  Gb  [ Linker created ]
+  0x00080000  __FLASH_segment_end__                         ----  Gb  [ Linker created ]
+  0x00080000  __FLASH1_segment_size__                       ----  Gb  [ Linker created ]
+  0x00080000  __FLASH1_segment_end__                        ----  Gb  [ Linker created ]
+  0x00800000  __CODE_RAM1_segment_used_start__
+                                                            ----  Gb  [ Linker created ]
+  0x00800000  __CODE_RAM1_segment_used_end__
+                                                            ----  Gb  [ Linker created ]
+  0x00800000  __CODE_RAM1_segment_start__
+                                                            ----  Gb  [ Linker created ]
+  0x00820000  __CODE_RAM1_segment_end__                     ----  Gb  [ Linker created ]
+  0x20000000  __RAM_segment_used_start__
+                                                            ----  Gb  [ Linker created ]
+  0x20000000  __RAM_segment_start__                         ----  Gb  [ Linker created ]
+  0x20000000  __RAM1_segment_used_start__
+                                                            ----  Gb  [ Linker created ]
+  0x20000000  __RAM1_segment_start__                        ----  Gb  [ Linker created ]
+  0x20020000  __stack_end__                                 ----  Gb  [ Linker created ]
+  0x20020000  __RAM_segment_used_end__                      ----  Gb  [ Linker created ]
+  0x20020000  __RAM_segment_end__                           ----  Gb  [ Linker created ]
+  0x20020000  __RAM1_segment_used_end__                     ----  Gb  [ Linker created ]
+  0x20020000  __RAM1_segment_end__                          ----  Gb  [ Linker created ]
+
+
+***********************************************************************************************
+***                                                                                         ***
+***                                      LINK SUMMARY                                       ***
+***                                                                                         ***
+***********************************************************************************************
+
+Memory breakdown:
+
+    8 440 bytes read-only  code    + 
+      560 bytes read-only  data    =   9 000 bytes read-only (total)
+    3 017 bytes read-write data
+
+Region summary:
+
+  Name        Range                     Size                 Used               Unused       Alignment Loss
+  ----------  -----------------  -----------  -------------------  -------------------  -------------------
+  FLASH       00000000-0007ffff      524 288        9 004   1.72%      515 284  98.28%            0   0.00%
+  RAM         20000000-2001ffff      131 072        3 017   2.30%      128 055  97.70%            0   0.00%
+
+Link complete: 0 errors, 0 warnings, 0 remarks
